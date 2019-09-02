@@ -1,0 +1,59 @@
+.yhq_list{
+	padding-top: 20upx;
+	box-sizing: border-box;
+	padding-bottom: 100upx;
+}
+.yhq_item{
+	width: 649upx;
+	height: 171upx;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	margin: 0 auto;
+	margin-bottom:20upx;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 30upx;
+	box-sizing: border-box;
+	position: relative;
+}
+.kyq{
+	background-image: url('../../static/wdyhq_kyq.png');
+}
+.gqq{
+	background-image: url('../../static/wdyhq_gqq.png');
+}
+.yh_money{
+	color: white;
+	font-size: 72upx;
+	padding: 0 0upx;
+}
+.yh_time{
+	color: white;
+	font-size: 20upx;
+}
+.gqq .yh_money,.gqq .yh_time{
+	color: #a8a8a8;
+}
+.selected_icon{
+	width: 149upx;
+	height: 149upx;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 200upx;
+}
+
+.footer_btn{
+	background: #139CFF;
+	height: 93upx;
+	font-size: 24upx;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}

@@ -1,0 +1,41 @@
+
+.km_li{
+	height: 94rpx;
+	border-bottom: solid 1px #EEEEEE;
+	padding: 0 30rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	color: #139CFF;
+	font-size: 24rpx;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.li_title{
+	width: 200rpx;
+	font-size: 24rpx;
+}
+.li_text{
+	color: #7c7c7c;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.phone_icon{
+	width: 37rpx;
+	height: 37rpx;
+	margin-left: 10rpx;
+}
+

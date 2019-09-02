@@ -1,0 +1,94 @@
+.login_page{
+	background-image: url("../../static/login_bg.png");
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	background-position-y: -130upx;
+}
+.login_items{
+	width: 100%;
+	padding: 200upx 100upx 0;
+	box-sizing: border-box;
+}
+.km_logo{
+	width: 169upx;
+	height: 169upx;
+	border-radius: 50%;
+	box-shadow: 0 0 10upx 2upx rgba(0,0,0,0.1);
+	margin: 0 auto;
+	background: white;
+}
+.login_item{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 80upx;
+	font-size: 24upx;
+	color: #494949;
+	align-items: center;
+	position: relative;
+}
+.login_ipt{
+	border-bottom: solid 1px #e1e1e1;
+	width: calc(100% - 100upx);
+	font-size: 24upx;
+}
+.ipt_pla{
+	color: #a7a7a7;
+	font-size: 22upx;
+}
+.get_yzm{
+	position: absolute;
+	right: 0;
+	color: #139CFF;
+	font-size: 24upx;
+}
+.yzm_ipt{
+	padding-right: 140upx;
+	box-sizing: border-box;
+}
+
+.isAgree{
+	font-size: 20upx;
+	margin-top: 40upx;
+}
+checkbox .wx-checkbox-input{
+	width: 25upx;
+	height: 25upx;
+}
+.pop_nav{
+	display: inline-block;
+	color: #139CFF;
+}
+.next_btn{
+	width: 510upx;
+	height: 81upx;
+	border-radius: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+	margin-top: 50upx;
+	background: #ebebeb;
+	font-size: 24upx;
+	color: #8c8c8c;
+}
+.sure_isAgree{
+	background: #139CFF;
+	color:white;
+}
+.getuserInfo_text{
+	color: #8c8c8c;
+	text-align: center;
+	width: 500upx;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin: 0 auto;
+}
+.getuserInfo{
+	margin-top: 200upx;
+	width: 250upx;
+	font-size: 26upx;
+	color: #8c8c8c;
+}

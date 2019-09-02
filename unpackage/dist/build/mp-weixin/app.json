@@ -1,0 +1,89 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/clause/clause",
+    "pages/uploadDrivingLicense/uploadDrivingLicense",
+    "pages/login/login",
+    "pages/uploadCard/uploadCard",
+    "pages/order/order",
+    "pages/trends/trends",
+    "pages/my/my",
+    "pages/selectCity/selectCity",
+    "pages/selectCar/selectCar",
+    "pages/orderList/orderList",
+    "pages/orderInfo/orderInfo",
+    "pages/orderInfo_shipper/orderInfo_shipper",
+    "pages/confirmOrder/confirmOrder",
+    "pages/selectRole/selectRole",
+    "pages/TradingRules/TradingRules",
+    "pages/TradingRulesContent/TradingRulesContent",
+    "pages/myAssess/myAssess",
+    "pages/assessInfo/assessInfo",
+    "pages/myCoupon/myCoupon",
+    "pages/orderTakerSuccess/orderTakerSuccess",
+    "pages/cashOut/cashOut",
+    "pages/cashOutRecord/cashOutRecord",
+    "pages/writeAassess/writeAassess",
+    "pages/userSeeOrderInfo/userSeeOrderInfo",
+    "pages/selectCoupon/selectCoupon",
+    "pages/searchCity/searchCity",
+    "pages/writeAddress/writeAddress",
+    "pages/carMap/carMap",
+    "pages/photo/photo",
+    "pages/selectCalendar/selectCalendar",
+    "pages/appeal/appeal",
+    "pages/trend_info/trend_info",
+    "pages/statement/statement",
+    "pages/orderInfo2/orderInfo2",
+    "pages/update/update",
+    "pages/selectGoodsName/selectGoodsName",
+    "pages/webview/webview",
+    "pages/webview2/webview2"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "如期货运",
+    "navigationBarBackgroundColor": "#139cff",
+    "backgroundColor": "#139cff"
+  },
+  "tabBar": {
+    "color": "#595959",
+    "selectedColor": "#139cff",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/home.png",
+        "selectedIconPath": "static/home_active.png"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "订单",
+        "iconPath": "static/order.png",
+        "selectedIconPath": "static/order_active.png"
+      },
+      {
+        "pagePath": "pages/trends/trends",
+        "text": "动态",
+        "iconPath": "static/trends.png",
+        "selectedIconPath": "static/trends_active.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "static/my.png",
+        "selectedIconPath": "static/my_active.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
+}

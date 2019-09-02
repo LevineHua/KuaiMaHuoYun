@@ -1,0 +1,73 @@
+.selectRole_page{
+	background-image: url("../../static/tip_bg.png");
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	padding-top: 100upx;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+.role_item{
+	width: 201upx;
+	height: 201upx;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 80upx;
+	position: relative;
+}
+.role_item.active{
+	box-shadow: 0 0 2px 6upx rgba(19,156,255,0.7);
+}
+.active_item{
+	display: none;
+}
+.active .active_item{
+	color: white;
+	font-size: 24upx;
+	background: rgba(0,0,0,0.4);
+	width: 149upx;
+	height: 149upx;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.role{
+	width: 149upx;
+	height: 149upx;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #139cff;
+	font-size: 24upx;
+	box-shadow: 0 0 5px 1upx rgba(0,0,0,0.1);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.carer{
+	background-image: url("../../static/carer.png");
+}
+.goodser{
+	background-image: url("../../static/goodser.png");
+}
+.next_btn{
+	width: 370upx;
+	height: 81upx;
+	border-radius: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+	margin-top: 80upx;
+	background: white;
+	font-size: 24upx;
+	color: #139CFF;
+	box-shadow: 0 0 3px 1upx rgba(0,0,0,0.2);
+}

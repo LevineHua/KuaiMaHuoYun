@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "申诉",
+  "usingComponents": {
+    "km-input": "/components/km-input"
+  }
+}

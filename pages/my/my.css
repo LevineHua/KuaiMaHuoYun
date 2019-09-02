@@ -1,0 +1,98 @@
+.my_top{
+	width: 750upx;
+	height: 400upx;
+	background-image: url('../../static/my_bg.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	padding-top: 40upx;
+	box-sizing: border-box;
+}
+.my_info{
+	width: 700upx;
+	margin: 0 auto;
+	height: calc(100vh - 40upx);
+	border-radius: 3px;
+	box-shadow: 0 0 10px 1px rgba(0,0,0,0.3);
+	background: white;
+	padding: 20upx 10upx 0;
+	box-sizing: border-box;
+}
+.my_picture{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 152upx;
+	height: 152upx;
+	border-radius: 50%;
+	position: relative;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.picture{
+	width: 152upx;
+	height: 152upx;
+}
+.my_name{
+	text-align: center;
+	color: #139CFF;
+	padding: 10upx;
+	font-size: 24upx;
+}
+.census{
+	width: 100%;
+	height: 163upx;
+	background-image: url('../../static/info_bg.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	display: flex;
+}
+.census_item{
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.item_status{
+	color: #9e9e9e;
+	font-size: 24upx;
+}
+.item_num{
+	color: #139cff;
+	font-size: 36upx;
+}
+.my_menu{
+	padding: 30upx 40upx;
+}
+.menu_item{
+	border-bottom: solid 1px #EEEEEE;
+	padding: 20upx 0;
+	color: #7c7c7c;
+	font-size: 24upx;
+	display: flex;
+	align-items: center;
+	background: #fff;
+	line-height: 1.8;
+}
+button::after {
+  border: none;
+}
+.item_icon{
+	width: 34upx;
+	height: 34upx;
+	margin-right: 20upx;
+}
+.call_item{
+	border-bottom: solid 1px #EEEEEE;
+	color: #8c8c8c;
+	font-size: 26upx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 87upx;
+}
+.phone_icon{
+	width: 39upx;
+	height: 39upx;
+	margin-left: 10upx;
+}

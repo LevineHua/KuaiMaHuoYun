@@ -1,0 +1,130 @@
+.order_info{
+	height: 142upx;
+	width: 720upx;
+	/* margin-top: 20upx; */
+	margin-left: 30upx;
+	border: solid 1px #E1E1E1;
+	border-radius: 50px 0 0 50px;
+	display: flex;
+	justify-content: space-between;
+	box-sizing: border-box;
+}
+.info{
+	display: flex;
+	align-items: center;
+}
+.user_picture{
+	width: 135upx;
+	height: 135upx;
+	margin-right: 40upx;
+}
+.address{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	color: #139CFF;
+	font-size: 26upx;
+}
+.infos{
+	color: #7c7c7c;
+	font-size: 22upx;
+}
+.info_user{
+	color: #7c7c7c;
+	font-size: 20upx;
+}
+.address_line_icon{
+	width: 66upx;
+	height: 7upx;
+	margin: 0 10upx;
+}
+.status{
+	display: flex;
+	align-items: center;
+	color: #818181;
+	font-size: 20upx;
+	margin-right: 20upx;
+}
+.km_timeline{
+	margin-top: 80upx;
+}
+.km_timeline_item{
+	display: flex;
+	padding: 0 30upx;
+	box-sizing: border-box;
+	align-items: baseline;
+}
+.timeline_time{
+	font-size: 18upx;
+	color: #989898;
+	margin-right:30upx;
+	display: none;
+}
+.timeline_content{
+	font-size: 20upx;
+	color: #7c7c7c;
+	position: relative;
+	height: 100upx;
+	border-left: solid 1px #eee;
+	padding-left: 30upx;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+	flex: 1;
+}
+.timeline_link{
+	font-size: 20upx;
+	color: #139CFF;
+}
+.timeline_content.lastTimeline_item{
+	border: none;
+}
+.timeline_drink_bg{
+	position: absolute;
+	width: 35upx;
+	height: 35upx;
+	top: 0;
+	left: -17.5upx;
+	background: white;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.timeline_drink{
+	width: 21upx;
+	height: 21upx;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.isComplete{
+	border: solid 1px #139CFF;
+}
+.timeline_drink:before{
+	content: '';
+	width: 11upx;
+	height: 11upx;
+	background: #139CFF;
+	border-radius: 50%;
+}
+.complete_btn{
+	font-size: 24upx;
+	color: #8c8c8c;
+	width: 312upx;
+	height: 63upx;
+	border-radius: 30px;
+	box-shadow: 0 0 5px 1px rgba(0,0,0,0.2);
+	background: #EBEBEB;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	margin-top: 100upx;
+}
+.complete_active{
+	box-shadow: none;
+	background: #139CFF;
+	color: white;
+}

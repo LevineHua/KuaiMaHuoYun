@@ -1,0 +1,71 @@
+.uni-swiper-tab{
+	height: 180upx;
+	line-height: 0;
+	border-bottom: solid 1px #EEEEEE;
+}
+.swiper-tab-list{
+	width: 50%;
+	font-size: 24.17upx;
+	color: #818181;
+	height: 88upx;
+	line-height: 88upx;
+}
+.swiper-tab-list.active{
+	color: #139CFF;
+	border-bottom: solid 2px #139CFF;
+}
+.swiper-box{
+	height: calc(100% - 185upx);
+}
+.list{
+	height: 100%;
+}
+.order_filter{
+	display: flex;
+	border-bottom: solid 1px #EEEEEE;
+	height: 88upx;
+}
+.filter{
+	width: calc(100% / 3);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	border-right: solid 1px rgba(19,156,255,0.25);
+	color: #139cff;
+	font-size: 24upx;
+}
+.filter:last-child{
+	border: none;
+}
+.list_null{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding-top: 60upx;
+}
+.null_icon{
+	width: 435upx;
+	height: 363upx;
+}
+.null_text{
+	color: #7c7c7c;
+	font-size: 24upx;
+}
+.recommend_title{
+	color: #139CFF;
+	font-size: 24upx;
+	height: 70upx;
+	display: flex;
+	align-items: center;
+	padding: 0 20upx;
+	border-bottom: solid 1px #EEEEEE;
+	margin-top: 20upx;
+}
+.recommend_icon{
+	width: 24upx;
+	height: 32upx;
+	margin-right: 10upx;
+}

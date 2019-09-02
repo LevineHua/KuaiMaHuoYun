@@ -1,0 +1,1 @@
+<view bind:__l="__l"><button type="primary" disabled="{{disabled}}" data-event-opts="{{[['tap',[['fingerprint']]]]}}" bindtap="__e">按下开始识别指纹</button><view style="width:100%;text-align:center;">{{''+result+''}}</view></view>

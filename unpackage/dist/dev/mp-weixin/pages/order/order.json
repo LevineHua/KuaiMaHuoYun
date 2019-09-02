@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "订单",
+  "usingComponents": {
+    "km-order": "/components/km-order"
+  }
+}

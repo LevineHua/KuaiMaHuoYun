@@ -1,0 +1,2 @@
+setCssToHead([".",[1],"content_title{ color: #626262; font-size: ",[0,24],"; padding: ",[0,20]," 0; text-align: center; }\n.",[1],"content{ color: #787878 ; font-size: ",[0,18],"; padding: 0 ",[0,30],"; }\n",],undefined,{path:"./pages/TradingRulesContent/TradingRulesContent.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/TradingRulesContent/TradingRulesContent.wxml') } }));

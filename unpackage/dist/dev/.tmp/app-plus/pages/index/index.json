@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "快马货运",
+  "usingComponents": {
+    "km-title": "/components/km-title",
+    "km-select": "/components/km-select",
+    "uni-popup": "/components/uni-popup/uni-popup",
+    "km-input": "/components/km-input"
+  }
+}

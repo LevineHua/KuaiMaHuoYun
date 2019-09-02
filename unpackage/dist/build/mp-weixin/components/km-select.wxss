@@ -1,0 +1,60 @@
+
+.km_select{
+	width: 100%;
+	height: 83rpx;
+	border-radius: 30px;
+	border: solid 1px #d7d7d7;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	color: #139cff;
+	font-size: 24rpx;
+	padding: 20rpx;
+	padding-right: 40rpx;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	margin: 50rpx 0;
+}
+.select_title{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.select_icon{
+	width: 28rpx;
+	height: 28rpx;
+	margin-right: 25rpx;
+}
+.select_right{
+	width: 18rpx;
+	height: 35rpx;
+	margin-left: 20rpx;
+}
+.address_city{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.km_select.errorRed{
+	border-color: red;
+}
+

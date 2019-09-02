@@ -1,0 +1,55 @@
+
+.select-car-wrap {
+	position: relative;
+	padding: 0 30rpx;
+	background-color: #fff;
+}
+.car_title{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	color: #747474;
+	font-size: 24.01rpx;
+	margin: 28rpx 0;
+}
+.car_list{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
+	-webkit-box-pack: start;
+	-webkit-justify-content: flex-start;
+	    -ms-flex-pack: start;
+	        justify-content: flex-start;
+	margin-right: -36rpx;
+}
+.car_item{
+	width: 137rpx;
+	height: 55rpx;
+	margin-right: 40rpx;
+	margin-bottom: 20rpx;
+	line-height: 55rpx;
+	text-align: center;
+	border: 1px solid #dcdcdc;
+	border-radius: 6rpx;
+	color: #626262;
+	font-size: 24rpx;
+}
+.car_item_hc{
+	width: 190rpx;
+	margin-right: 49rpx;
+}
+.car_item.active {
+  background-color: #d5ebff;
+  border-color: #2f9bfe;
+  color: #2f9bfe;
+}
+

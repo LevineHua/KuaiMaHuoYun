@@ -1,0 +1,59 @@
+.assess_item{
+	height: 121upx;
+	border-bottom: solid 1px #EEEEEE;
+	padding: 10upx 30upx;
+	box-sizing: border-box;
+	display: flex;
+}
+.assess_info{
+	width: 50%;
+	display: flex;
+}
+.address_icon{
+	width: 21upx;
+	height: 27upx;
+	margin-right: 20upx;
+	margin-top: 10upx;
+}
+.assess_address{
+	flex: 1;
+	justify-content: space-between;
+	display: flex;
+	flex-direction: column;
+}
+.address{
+	display: flex;
+	align-items: center;
+	color: #139CFF;
+	font-size: 26upx;
+}
+.line_icon{
+	width: 66upx;
+	height: 7upx;
+	margin: 0 30upx;
+}
+.assess_time{
+	color: #838383;
+	font-size: 20upx;
+}
+.assess_score{
+	flex: 1;
+}
+.assess_score{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.grade{
+	width: 23upx;
+	height: 22upx;
+	margin: 5upx;
+}
+.assess_see{
+	display: flex;
+	align-items: center;
+}
+.see_icon{
+	width: 35upx;
+	height: 35upx;
+}

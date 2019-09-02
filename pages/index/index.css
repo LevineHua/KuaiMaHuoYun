@@ -1,0 +1,108 @@
+.swiper{
+	height: 342upx;
+}
+.banner{
+	width: 750upx;
+	height: 342upx;
+}
+.select_infos{
+	width: 100%;
+	padding: 20upx;
+	box-sizing: border-box;
+}
+.select_btn{
+	color: white;
+	background: #139CFF;
+	width: 312upx;
+	height: 63upx;
+	font-size: 24upx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 30px;
+	margin: 0 auto;
+}
+.select_disable{
+	background: #e8e8e8;
+	color: #8c8c8c;
+}
+.uni-center.center-box{
+	position: relative;
+}
+.yhq{
+	width: 460upx;
+	height: 180upx;
+	position: absolute;
+	bottom: 20upx;
+	left: 50%;
+	transform: translateX(-50%);
+	margin-left: 20upx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	font-size: 70upx;
+	font-weight: bold;
+}
+.yhq_money{
+	width: 395upx;
+	height: 144upx;
+}
+.orderRemarks{
+	border: solid 1px #eee;
+	color: #666;
+	font-size: 28upx;
+	width: 100%;
+	height: 153upx;
+	padding: 10upx 20upx;
+	box-sizing: border-box;
+	margin-bottom: 60upx;
+}
+.remarks_pla{
+	font-size: 28upx;
+	padding: 10upx 20upx;
+	color: #999;
+}
+
+.km_pop{
+	color: #666666;
+	font-size: 24upx;
+	padding: 30upx;
+	width: 488upx;
+	height: 120upx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.pop_btns{
+	height: 91upx;
+	width: 100%;
+	display: flex;
+	border-radius: 0 0 10upx 10upx;
+}
+.pop_btn{
+	width: 50%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 24upx;
+	border-top: solid 1px #ededed;
+	flex: 1;
+}
+.cancle_btn{
+	color: 9f9f9f;
+	background: white;
+}
+.sure_btn{
+	color: #686868;
+	background: #F7F7F7;
+}
+.sure_isAgree{
+	background: #139CFF;
+	color:white;
+}
+.pop_nav{
+	display: inline-block;
+	color: #139CFF;
+}

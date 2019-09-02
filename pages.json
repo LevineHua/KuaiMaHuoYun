@@ -1,0 +1,269 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "如期货运"
+			}
+		},
+		{
+		    "path" : "pages/clause/clause",
+		    "style" : {
+				"navigationBarTitleText": "注册协议"
+			}
+		},
+		{
+		    "path" : "pages/uploadDrivingLicense/uploadDrivingLicense",
+		    "style" : {
+				"navigationBarTitleText": "上传驾驶证"
+			}
+		},
+		{
+		    "path" : "pages/login/login",
+		    "style" : {
+				"navigationBarTitleText": "绑定手机"
+			}
+		}
+		,{
+		    "path" : "pages/uploadCard/uploadCard",
+		    "style" : {
+				"navigationBarTitleText": "上传身份证"
+			}
+		},
+		{
+            "path" : "pages/order/order",
+            "style" : {
+				"navigationBarTitleText": "订单"
+			}
+        }
+        ,{
+            "path" : "pages/trends/trends",
+            "style" : {
+				"navigationBarTitleText": "动态"
+			}
+        }
+        ,{
+            "path" : "pages/my/my",
+            "style" : {
+				"navigationBarTitleText": "我的"
+			}
+        }
+        ,{
+            "path" : "pages/selectCity/selectCity",
+            "style" : {
+				"navigationBarTitleText": "选择地区"
+			}
+        }
+        ,{
+            "path" : "pages/selectCar/selectCar",
+            "style" : {
+				"navigationBarTitleText": "选择车辆"
+			}
+        }
+        ,{
+            "path" : "pages/orderList/orderList",
+            "style" : {
+				"navigationBarTitleText": "订单列表"
+			}
+        }
+        ,{
+            "path" : "pages/orderInfo/orderInfo",
+            "style" : {
+				"navigationBarTitleText": "订单详情"
+			}
+        }
+		,{
+            "path" : "pages/orderInfo_shipper/orderInfo_shipper",
+            "style" : {
+				"navigationBarTitleText": "订单详情"
+			}
+        },{
+            "path" : "pages/confirmOrder/confirmOrder",
+            "style" : {
+				"navigationBarTitleText": "订单详情"
+			}
+        }
+		,{
+            "path" : "pages/selectRole/selectRole",
+            "style" : {
+				"navigationBarTitleText": "提示"
+			}
+        }
+        ,{
+            "path" : "pages/TradingRules/TradingRules",
+            "style" : {
+				"navigationBarTitleText": "交易规则"
+			}
+        }
+        ,{
+            "path" : "pages/TradingRulesContent/TradingRulesContent",
+            "style" : {
+				"navigationBarTitleText": "交易规则"
+			}
+        }
+        ,{
+            "path" : "pages/myAssess/myAssess",
+            "style" : {
+				"navigationBarTitleText": "我的评价"
+			}
+        }
+        ,{
+            "path" : "pages/assessInfo/assessInfo",
+            "style" : {
+				"navigationBarTitleText": "评价详情"
+			}
+        }
+        ,{
+            "path" : "pages/myCoupon/myCoupon",
+            "style" : {
+				"navigationBarTitleText": "我的优惠券"
+			}
+        },
+		{
+		    "path" : "pages/orderTakerSuccess/orderTakerSuccess",
+		    "style" : {
+				"navigationBarTitleText": "提示"
+			}
+		}
+        ,{
+            "path" : "pages/cashOut/cashOut",
+            "style" : {
+				"navigationBarTitleText": "余额提现"
+			}
+        }
+        ,{
+            "path" : "pages/cashOutRecord/cashOutRecord",
+            "style" : {
+				"navigationBarTitleText": "明细记录"
+			}
+        }
+        ,{
+		    "path" : "pages/writeAassess/writeAassess",
+		    "style" : {
+				"navigationBarTitleText": "评价"
+			}
+		},
+		{
+		    "path" : "pages/userSeeOrderInfo/userSeeOrderInfo",
+		    "style" : {
+				"navigationBarTitleText": "订单信息"
+			}
+		}
+        ,{
+            "path" : "pages/selectCoupon/selectCoupon",
+            "style" : {
+				"navigationBarTitleText": "我的优惠券"
+			}
+        }
+        ,{
+            "path" : "pages/searchCity/searchCity",
+            "style" : {
+				"navigationBarTitleText": "选择地区"
+			}
+        }
+        ,{
+            "path" : "pages/writeAddress/writeAddress",
+            "style" : {
+				"navigationBarTitleText": "选择地区"
+			}
+        }
+        ,{
+            "path" : "pages/carMap/carMap",
+            "style" : {
+				"navigationBarTitleText": "订单信息"
+			}
+        }
+        ,{
+            "path" : "pages/photo/photo",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/selectCalendar/selectCalendar",
+            "style" : {
+				"navigationBarTitleText": "选择日期"
+			}
+        }
+        ,{
+            "path" : "pages/appeal/appeal",
+            "style" : {
+				"navigationBarTitleText": "申诉"
+			}
+        }
+        ,{
+            "path" : "pages/trend_info/trend_info",
+            "style" : {
+				"navigationBarTitleText": "动态"
+			}
+        }
+        ,{
+            "path" : "pages/statement/statement",
+            "style" : {
+				"navigationBarTitleText": "免责声明"
+			}
+        }
+        ,{
+            "path" : "pages/orderInfo2/orderInfo2",
+            "style" : {
+				"navigationBarTitleText": "订单详情"
+			}
+        }
+        ,{
+            "path" : "pages/update/update",
+            "style" : {
+				"navigationBarTitleText": "资料修改"
+			}
+        }
+        ,{
+            "path" : "pages/selectGoodsName/selectGoodsName",
+            "style" : {
+				"navigationBarTitleText": "选择货物名称"
+			}
+        }
+        ,{
+            "path" : "pages/webview/webview",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/webview2/webview2",
+            "style" : {}
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "如期货运",
+		"navigationBarBackgroundColor": "#139cff",
+		"backgroundColor": "#139cff"
+	},
+	"tabBar":{
+		"color":"#595959",
+		"selectedColor":"#139cff",
+		"backgroundColor":"#ffffff",
+		"borderStyle":"black",
+		"list":[
+			{
+				"pagePath":"pages/index/index",
+				"text":"首页",
+				"iconPath":"static/home.png",
+				"selectedIconPath":"static/home_active.png"
+			},
+			{
+				"pagePath":"pages/order/order",
+				"text":"订单",
+				"iconPath":"static/order.png",
+				"selectedIconPath":"static/order_active.png"
+			},
+			{
+				"pagePath":"pages/trends/trends",
+				"text":"动态",
+				"iconPath":"static/trends.png",
+				"selectedIconPath":"static/trends_active.png"
+			},
+			{
+				"pagePath":"pages/my/my",
+				"text":"我的",
+				"iconPath":"static/my.png",
+				"selectedIconPath":"static/my_active.png"
+			}
+		]
+	}
+}

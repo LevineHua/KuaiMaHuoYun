@@ -1,0 +1,76 @@
+.upload_drivingLicense{
+	padding-bottom: 30upx;
+	min-height: 100vh;
+}
+.cards,.card_item{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.card_item{
+	margin-top: 20upx;
+	margin-bottom: 40upx;
+}
+.card{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+.card_img{
+	width: 227upx;
+	height: 155upx;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-image: url('../../static/upload.png');
+	position: relative;
+}
+.card_title{
+	color: #b1b1b1;
+	font-size: 24upx;
+	margin-top: 20upx;
+}
+.uni-input{
+	border-top: solid 1px #e0e0e0;
+	border-bottom: solid 1px #e0e0e0;
+	color: #a8a8a8;
+	font-size: 24upx;
+}
+.uni-input:last-child{
+	border-top: none;
+}
+.ipt_pla{
+	color: #a8a8a8;
+	font-size: 24upx;
+}
+.next_btn{
+	width: 370upx;
+	height: 81upx;
+	border-radius: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+	margin-top: 30upx;
+	margin-bottom: 30upx;
+	font-size: 24upx;
+	background: #139CFF;
+	color:white;
+}
+.select_car{
+	display: flex;
+	justify-content: space-between;
+	color: #139CFF;
+	font-size: 24upx;
+	align-items: center;
+}
+.select_text{
+	display: flex;
+	align-items: center;
+}
+.right_icon{
+	width: 15upx;
+	height: 29upx;
+	margin-left: 20upx;
+}

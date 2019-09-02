@@ -1,0 +1,1 @@
+<view class="page" bind:__l="__l"><view class="content_title">{{news.title}}</view><view class="content"><u-parse content="{{news.content}}"></u-parse></view></view>

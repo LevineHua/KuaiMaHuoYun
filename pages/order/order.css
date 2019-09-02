@@ -1,0 +1,22 @@
+.uni-swiper-tab{
+	height: 74upx;
+	line-height: 0;
+	border-bottom: solid 1px #EEEEEE;
+}
+.swiper-tab-list{
+	width: 25%;
+	font-size: 24.17upx;
+	color: #818181;
+	height: 72upx;
+	line-height: 72upx;
+}
+.swiper-tab-list.active{
+	color: #139CFF;
+	border-bottom: solid 2px #139CFF;
+}
+.swiper-box{
+	height: calc(100% - 76upx);
+}
+.list{
+	height: 100%;
+}

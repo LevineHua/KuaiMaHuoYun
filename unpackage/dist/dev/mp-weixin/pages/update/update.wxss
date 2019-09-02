@@ -1,0 +1,26 @@
+
+.update_item{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	height: 93rpx;
+	background-color: #ffffff;
+	border-bottom: solid 1px #e3e3e3;
+	padding: 0 20rpx;
+	font-size: 24rpx;
+	color: #626262;
+}
+.update_icon{
+	width: 32rpx;
+	height: 32rpx
+}
+

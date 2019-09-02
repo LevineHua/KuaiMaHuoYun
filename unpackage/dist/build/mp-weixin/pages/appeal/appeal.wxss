@@ -1,0 +1,86 @@
+
+.writeAddress{
+	padding-top: 10rpx;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+.address{
+	width: 710rpx;
+	height: 83rpx;
+	margin: 0 auto;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	border: solid 1px #D7D7D7;
+	border-radius: 30px;
+	padding: 0 30rpx;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	margin-top: 20rpx;
+}
+.address_info{
+	color: #139CFF;
+	font-size: 24rpx;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+.address_icon{
+	height: 32rpx;
+	width: 28rpx;
+	margin-right: 20rpx;
+}
+.refresh_icon{
+	height: 29rpx;
+	width: 29rpx;
+}
+.address_text{
+	width: 100%;
+	height: 153rpx;
+	padding: 10rpx 20rpx;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	border: solid 1px #D7D7D7;
+	border-left: none;
+	border-right: none;
+	font-size: 24rpx;
+	color: #D7D7D7;
+	color: #333;
+}
+.select_btn{
+	color: white;
+	background: #139CFF;
+	width: 312rpx;
+	height: 63rpx;
+	font-size: 24rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	border-radius: 30px;
+	margin: 0 auto;
+	margin-top: 40rpx;
+}
+

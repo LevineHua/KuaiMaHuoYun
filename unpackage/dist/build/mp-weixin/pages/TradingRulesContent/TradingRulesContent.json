@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "交易规则",
+  "usingComponents": {
+    "u-parse": "/components/uParse/src/wxParse"
+  }
+}
