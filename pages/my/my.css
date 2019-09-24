@@ -96,3 +96,16 @@ button::after {
 	height: 39upx;
 	margin-left: 10upx;
 }
+
+.goLogin{
+	color: white;
+	background: #139CFF;
+	width: 312upx;
+	height: 63upx;
+	font-size: 24upx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 30px;
+	margin: 50upx auto 50upx;
+}

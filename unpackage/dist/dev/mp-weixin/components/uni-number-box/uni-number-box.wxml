@@ -1,1 +1,0 @@
-<view class="uni-numbox" bind:__l="__l"><image class="numbox_icon" src="../../static/minus.png" data-event-opts="{{[['tap',[['_calcValue',['minus']]]]]}}" bindtap="__e"></image><view class="numbox_text">{{inputValue}}</view><image class="numbox_icon" src="../../static/add.png" data-event-opts="{{[['tap',[['_calcValue',['plus']]]]]}}" bindtap="__e"></image></view>

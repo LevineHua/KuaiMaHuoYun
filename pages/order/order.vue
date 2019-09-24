@@ -1,210 +1,217 @@
 <template>
 	<view class="page">
-		<!-- 车主 -->
-		<template v-if="userType==1">
-			<scroll-view id="tab-bar" class="uni-swiper-tab" scroll-x :scroll-left="scrollLeft">
-				<view v-for="(tab,index) in tabBars" :key="tab.id" class="swiper-tab-list" :class="tabIndex==index ? 'active' : ''"
-				 :id="tab.id" :data-current="index" @click="tapTab">{{tab.name}}</view>
-			</scroll-view>
-			<swiper :current="tabIndex" class="swiper-box" :duration="300" @change="changeTab">
-				<!-- <swiper-item v-for="(tab,index1) in 4" :key="index1">
-					<scroll-view class="list" scroll-y @scrolltolower="loadMore(index1)">
-						etetsetsetetse
-					</scroll-view>
-				</swiper-item> -->
-				<swiper-item>
-					<scroll-view class="list" scroll-y lower-threshold="10" @scrolltolower="loadMore(0)">
-						<kmOrder 
-							v-for="(daiL,order_index) in daiquerenList"
-							:key="order_index"
-							:name="daiL.username"
-							:startCity="daiL.start_delivery[0]"
-							:endCity="daiL.end_delivery[0]"
-							:money="daiL.money"
-							:carType="daiL.vehicle_msg"
-							:goodsWeight="daiL.transportation_weight"
-							:goodsName="daiL.transportation_name"
-							:startTime="daiL.start_time"
-							:createTime="daiL.create_time"
-							:status="daiL.states"
-							:orderId="daiL.id"
-							:userType='userType'
-							userIsCarer='false'
-						></kmOrder>
-					</scroll-view>
-				</swiper-item>
-				<swiper-item>
-					<scroll-view class="list" scroll-y lower-threshold="10" @scrolltolower="loadMore(1)">
-						<kmOrder 
-							v-for="(ol,dzf_index) in daizhifuList"
-							:key="dzf_index"
-							:name="ol.username"
-							:startCity="ol.start_delivery[0]"
-							:endCity="ol.end_delivery[0]"
-							:money="ol.money"
-							:carType="ol.vehicle_msg"
-							:goodsWeight="ol.transportation_weight"
-							:goodsName="ol.transportation_name"
-							:startTime="ol.start_time"
-							:createTime="ol.create_time"
-							:status="ol.states"
-							:orderId="ol.id"
-							:userType='userType'
-							userIsCarer='false'
-						></kmOrder>
-					</scroll-view>
-				</swiper-item>
-				<swiper-item>
-					<scroll-view class="list" scroll-y lower-threshold="10" @scrolltolower="loadMore(2)">
-						<kmOrder 
-							v-for="(ol,ysz_index) in yunshuzhongList"
-							:key="ysz_index"
-							:name="ol.username"
-							:startCity="ol.start_delivery[0]"
-							:endCity="ol.end_delivery[0]"
-							:money="ol.money"
-							:carType="ol.vehicle_msg"
-							:goodsWeight="ol.transportation_weight"
-							:goodsName="ol.transportation_name"
-							:startTime="ol.start_time"
-							:createTime="ol.create_time"
-							:status="ol.states"
-							:orderId="ol.id"
-							:userType='userType'
-							userIsCarer='false'
-						></kmOrder>
-					</scroll-view>
-				</swiper-item>
-				<swiper-item>
-					<scroll-view class="list" scroll-y lower-threshold="10" @scrolltolower="loadMore(3)">
-						<kmOrder 
-							v-for="(ol,ywc_index) in yiwanchengList"
-							:key="ywc_index"
-							:name="ol.username"
-							:startCity="ol.start_delivery[0]"
-							:endCity="ol.end_delivery[0]"
-							:money="ol.money"
-							:carType="ol.vehicle_msg"
-							:goodsWeight="ol.transportation_weight"
-							:goodsName="ol.transportation_name"
-							:startTime="ol.start_time"
-							:createTime="ol.create_time"
-							:status="ol.states"
-							:orderId="ol.id"
-							:userType='userType'
-							userIsCarer='false'
-							@delOrder="delOrder(ol.id)"
-						></kmOrder>
-					</scroll-view>
-				</swiper-item>
-			</swiper>
+		<template v-if="uid=='' || uid==null">
+			<view class="no_login">
+				<view class="goLogin" @click="goLogin">去登陆</view>
+			</view>
 		</template>
-		<!-- 货主 -->
-		<template v-if="userType==0">
-			<scroll-view id="tab-bar" class="uni-swiper-tab" scroll-x :scroll-left="scrollLeft">
-				<view v-for="(tab,index2) in tabBars2" :key="tab.id" class="swiper-tab-list" :class="tabIndex==index2 ? 'active' : ''"
-				 :id="tab.id" :data-current="index2" @click="tapTab">{{tab.name}}</view>
-			</scroll-view>
-			<swiper :current="tabIndex" class="swiper-box" :duration="300" @change="changeTab">
-				<!-- <swiper-item v-for="(tab,index1) in 4" :key="index1">
-					<scroll-view class="list" scroll-y @scrolltolower="loadMore(index1)">
-						etetsetsetetse
-					</scroll-view>
-				</swiper-item> -->
-				<swiper-item>
-					<scroll-view class="list" scroll-y lower-threshold="10" @scrolltolower="loadMore(0)">
-						<!-- <kmOrder name="李四四" status='s-0' :userType='userType'></kmOrder> -->
-						<kmOrder 
-							v-for="(ol,yfb_index) in yifabuList"
-							:key="yfb_index"
-							:name="ol.username"
-							:startCity="ol.start_delivery[0]"
-							:endCity="ol.end_delivery[0]"
-							:money="ol.money"
-							:carType="ol.vehicle_msg"
-							:goodsWeight="ol.transportation_weight"
-							:goodsName="ol.transportation_name"
-							:startTime="ol.start_time"
-							:createTime="ol.create_time"
-							:status="ol.states"
-							:orderId="ol.id"
-							:userType='userType'
-							:needCar="ol.car_num"
-							@delOrder="delOrder(ol.id)"
-						></kmOrder>
-					</scroll-view>
-				</swiper-item>
-				<swiper-item>
-					<scroll-view class="list" scroll-y lower-threshold="10" @scrolltolower="loadMore(1)">
-						<!-- <kmOrder name="李四四" status='1' hideName='false' userIsCarer='false' :userType='userType'></kmOrder> -->
-						<kmOrder 
-							v-for="(ol,dqr_index) in daiquerenList"
-							:key="dqr_index"
-							:name="ol.username"
-							:startCity="ol.start_delivery[0]"
-							:endCity="ol.end_delivery[0]"
-							:money="ol.money"
-							:carType="ol.vehicle_msg"
-							:goodsWeight="ol.transportation_weight"
-							:goodsName="ol.transportation_name"
-							:startTime="ol.start_time"
-							:createTime="ol.create_time"
-							:status="ol.states"
-							:orderId="ol.id"
-							:userType='userType'
-							userIsCarer='false'
-						></kmOrder>
-					</scroll-view>
-				</swiper-item>
-				<swiper-item>
-					<scroll-view class="list" scroll-y lower-threshold="10" @scrolltolower="loadMore(2)">
-						<!-- <kmOrder name="李四四" status='3' hideName='false' userIsCarer='false' :userType='userType'></kmOrder> -->
-						<kmOrder 
-							v-for="(ol,ysz_index) in yunshuzhongList"
-							:key="ysz_index"
-							:name="ol.username"
-							:startCity="ol.start_delivery[0]"
-							:endCity="ol.end_delivery[0]"
-							:money="ol.money"
-							:carType="ol.vehicle_msg"
-							:goodsWeight="ol.transportation_weight"
-							:goodsName="ol.transportation_name"
-							:startTime="ol.start_time"
-							:createTime="ol.create_time"
-							:status="ol.states"
-							:orderId="ol.id"
-							:userType='userType'
-							userIsCarer='false'
-						></kmOrder>
-					</scroll-view>
-				</swiper-item>
-				<swiper-item>
-					<scroll-view class="list" scroll-y lower-threshold="10" @scrolltolower="loadMore(3)">
-						<!-- <kmOrder name="李四四" status='s-4' isRemark='false' hideName='false' :userType='userType'></kmOrder>
-						<kmOrder name="李四四" status='s-4' isRemark='true' hideName='false' :userType='userType'></kmOrder> -->
-						<kmOrder 
-							v-for="(ol,ywc_index) in yiwanchengList"
-							:key="ywc_index"
-							:name="ol.username"
-							:startCity="ol.start_delivery[0]"
-							:endCity="ol.end_delivery[0]"
-							:money="ol.money"
-							:carType="ol.vehicle_msg"
-							:goodsWeight="ol.transportation_weight"
-							:goodsName="ol.transportation_name"
-							:startTime="ol.start_time"
-							:createTime="ol.create_time"
-							:status="ol.states"
-							:orderId="ol.id"
-							:userType='userType'
-							userIsCarer='false'
-							@delOrder="delOrder(ol.id)"
-						></kmOrder>
-					</scroll-view>
-				</swiper-item>
-			</swiper>
+		<template v-if="uid!='' && uid!=null">
+			<!-- 车主 -->
+			<template v-if="userType==1">
+				<scroll-view id="tab-bar" class="uni-swiper-tab" scroll-x :scroll-left="scrollLeft">
+					<view v-for="(tab,index) in tabBars" :key="tab.id" class="swiper-tab-list" :class="tabIndex==index ? 'active' : ''"
+					 :id="tab.id" :data-current="index" @click="tapTab">{{tab.name}}</view>
+				</scroll-view>
+				
+				<swiper :current="tabIndex" class="swiper-box" :duration="300" @change="changeTab">
+					<!-- <swiper-item v-for="(tab,index1) in 4" :key="index1">
+						<scroll-view class="list" scroll-y @scrolltolower="loadMore(index1)">
+							etetsetsetetse
+						</scroll-view>
+					</swiper-item> -->
+					<swiper-item>
+						<scroll-view class="list" scroll-y lower-threshold="10" @scrolltolower="loadMore(0)">
+							<kmOrder 
+								v-for="(daiL,order_index) in daiquerenList"
+								:key="order_index"
+								:name="daiL.username"
+								:startCity="daiL.start_delivery[0]"
+								:endCity="daiL.end_delivery[0]"
+								:money="daiL.money"
+								:carType="daiL.vehicle_msg"
+								:goodsWeight="daiL.transportation_weight"
+								:goodsName="daiL.transportation_name"
+								:startTime="daiL.start_time"
+								:createTime="daiL.create_time"
+								:status="daiL.states"
+								:orderId="daiL.id"
+								:userType='userType'
+								userIsCarer='false'
+							></kmOrder>
+						</scroll-view>
+					</swiper-item>
+					<swiper-item>
+						<scroll-view class="list" scroll-y lower-threshold="10" @scrolltolower="loadMore(1)">
+							<kmOrder 
+								v-for="(ol,dzf_index) in daizhifuList"
+								:key="dzf_index"
+								:name="ol.username"
+								:startCity="ol.start_delivery[0]"
+								:endCity="ol.end_delivery[0]"
+								:money="ol.money"
+								:carType="ol.vehicle_msg"
+								:goodsWeight="ol.transportation_weight"
+								:goodsName="ol.transportation_name"
+								:startTime="ol.start_time"
+								:createTime="ol.create_time"
+								:status="ol.states"
+								:orderId="ol.id"
+								:userType='userType'
+								userIsCarer='false'
+							></kmOrder>
+						</scroll-view>
+					</swiper-item>
+					<swiper-item>
+						<scroll-view class="list" scroll-y lower-threshold="10" @scrolltolower="loadMore(2)">
+							<kmOrder 
+								v-for="(ol,ysz_index) in yunshuzhongList"
+								:key="ysz_index"
+								:name="ol.username"
+								:startCity="ol.start_delivery[0]"
+								:endCity="ol.end_delivery[0]"
+								:money="ol.money"
+								:carType="ol.vehicle_msg"
+								:goodsWeight="ol.transportation_weight"
+								:goodsName="ol.transportation_name"
+								:startTime="ol.start_time"
+								:createTime="ol.create_time"
+								:status="ol.states"
+								:orderId="ol.id"
+								:userType='userType'
+								userIsCarer='false'
+							></kmOrder>
+						</scroll-view>
+					</swiper-item>
+					<swiper-item>
+						<scroll-view class="list" scroll-y lower-threshold="10" @scrolltolower="loadMore(3)">
+							<kmOrder 
+								v-for="(ol,ywc_index) in yiwanchengList"
+								:key="ywc_index"
+								:name="ol.username"
+								:startCity="ol.start_delivery[0]"
+								:endCity="ol.end_delivery[0]"
+								:money="ol.money"
+								:carType="ol.vehicle_msg"
+								:goodsWeight="ol.transportation_weight"
+								:goodsName="ol.transportation_name"
+								:startTime="ol.start_time"
+								:createTime="ol.create_time"
+								:status="ol.states"
+								:orderId="ol.id"
+								:userType='userType'
+								userIsCarer='false'
+								@delOrder="delOrder(ol.id)"
+							></kmOrder>
+						</scroll-view>
+					</swiper-item>
+				</swiper>
+			</template>
+			<!-- 货主 -->
+			<template v-if="userType==0">
+				<scroll-view id="tab-bar" class="uni-swiper-tab" scroll-x :scroll-left="scrollLeft">
+					<view v-for="(tab,index2) in tabBars2" :key="tab.id" class="swiper-tab-list" :class="tabIndex==index2 ? 'active' : ''"
+					 :id="tab.id" :data-current="index2" @click="tapTab">{{tab.name}}</view>
+				</scroll-view>
+				<swiper :current="tabIndex" class="swiper-box" :duration="300" @change="changeTab">
+					<!-- <swiper-item v-for="(tab,index1) in 4" :key="index1">
+						<scroll-view class="list" scroll-y @scrolltolower="loadMore(index1)">
+							etetsetsetetse
+						</scroll-view>
+					</swiper-item> -->
+					<swiper-item>
+						<scroll-view class="list" scroll-y lower-threshold="10" @scrolltolower="loadMore(0)">
+							<!-- <kmOrder name="李四四" status='s-0' :userType='userType'></kmOrder> -->
+							<kmOrder 
+								v-for="(ol,yfb_index) in yifabuList"
+								:key="yfb_index"
+								:name="ol.username"
+								:startCity="ol.start_delivery[0]"
+								:endCity="ol.end_delivery[0]"
+								:money="ol.money"
+								:carType="ol.vehicle_msg"
+								:goodsWeight="ol.transportation_weight"
+								:goodsName="ol.transportation_name"
+								:startTime="ol.start_time"
+								:createTime="ol.create_time"
+								:status="ol.states"
+								:orderId="ol.id"
+								:userType='userType'
+								:needCar="ol.car_num"
+								@delOrder="delOrder(ol.id)"
+							></kmOrder>
+						</scroll-view>
+					</swiper-item>
+					<swiper-item>
+						<scroll-view class="list" scroll-y lower-threshold="10" @scrolltolower="loadMore(1)">
+							<!-- <kmOrder name="李四四" status='1' hideName='false' userIsCarer='false' :userType='userType'></kmOrder> -->
+							<kmOrder 
+								v-for="(ol,dqr_index) in daiquerenList"
+								:key="dqr_index"
+								:name="ol.username"
+								:startCity="ol.start_delivery[0]"
+								:endCity="ol.end_delivery[0]"
+								:money="ol.money"
+								:carType="ol.vehicle_msg"
+								:goodsWeight="ol.transportation_weight"
+								:goodsName="ol.transportation_name"
+								:startTime="ol.start_time"
+								:createTime="ol.create_time"
+								:status="ol.states"
+								:orderId="ol.id"
+								:userType='userType'
+								userIsCarer='false'
+							></kmOrder>
+						</scroll-view>
+					</swiper-item>
+					<swiper-item>
+						<scroll-view class="list" scroll-y lower-threshold="10" @scrolltolower="loadMore(2)">
+							<!-- <kmOrder name="李四四" status='3' hideName='false' userIsCarer='false' :userType='userType'></kmOrder> -->
+							<kmOrder 
+								v-for="(ol,ysz_index) in yunshuzhongList"
+								:key="ysz_index"
+								:name="ol.username"
+								:startCity="ol.start_delivery[0]"
+								:endCity="ol.end_delivery[0]"
+								:money="ol.money"
+								:carType="ol.vehicle_msg"
+								:goodsWeight="ol.transportation_weight"
+								:goodsName="ol.transportation_name"
+								:startTime="ol.start_time"
+								:createTime="ol.create_time"
+								:status="ol.states"
+								:orderId="ol.id"
+								:userType='userType'
+								userIsCarer='false'
+							></kmOrder>
+						</scroll-view>
+					</swiper-item>
+					<swiper-item>
+						<scroll-view class="list" scroll-y lower-threshold="10" @scrolltolower="loadMore(3)">
+							<!-- <kmOrder name="李四四" status='s-4' isRemark='false' hideName='false' :userType='userType'></kmOrder>
+							<kmOrder name="李四四" status='s-4' isRemark='true' hideName='false' :userType='userType'></kmOrder> -->
+							<kmOrder 
+								v-for="(ol,ywc_index) in yiwanchengList"
+								:key="ywc_index"
+								:name="ol.username"
+								:startCity="ol.start_delivery[0]"
+								:endCity="ol.end_delivery[0]"
+								:money="ol.money"
+								:carType="ol.vehicle_msg"
+								:goodsWeight="ol.transportation_weight"
+								:goodsName="ol.transportation_name"
+								:startTime="ol.start_time"
+								:createTime="ol.create_time"
+								:status="ol.states"
+								:orderId="ol.id"
+								:userType='userType'
+								userIsCarer='false'
+								@delOrder="delOrder(ol.id)"
+							></kmOrder>
+						</scroll-view>
+					</swiper-item>
+				</swiper>
+			</template>
 		</template>
-		
 	</view>
 </template>
 
@@ -275,6 +282,7 @@
 				yunshuzhongList:[],	//运输中
 				yiwanchengList:[],	//已完成
 				yifabuList:[],	//货主已发布的订单
+				uid:''
 			}
 		},
 		components:{
@@ -282,17 +290,24 @@
 		},
 		onLoad() {
 			var _this = this;
-			this.userinfo = uni.getStorageSync('userinfo');
+			/* this.userinfo = uni.getStorageSync('userinfo');
 			this.userType = this.userinfo.user_identity;
+			this.uid = uni.getStorageSync("uid"); */
 		},
 		onShow() {
+			var _this = this;
+			this.uid = uni.getStorageSync("uid");
+			this.url = this.serverURL;
+			if(this.uid==null || this.uid==''){
+				return;
+			}
+			this.userinfo = uni.getStorageSync('userinfo');
+			this.userType = this.userinfo.user_identity;
+			var user_id = this.userinfo.user_id;
 			uni.showLoading({
 				title:'加载中...',
 				mask:true
 			})
-			var user_id = this.userinfo.user_id;
-			this.url = this.serverURL;
-			var _this = this;
 			if(this.userType==1){
 				_this.userOrderList('0,3',0);
 				_this.userOrderList('7',0);
@@ -302,6 +317,11 @@
 			}
 		},
 		methods: {
+			goLogin(){
+				uni.navigateTo({
+					url:'../login/login'
+				})
+			},
 			goDetail(e) {
 				uni.navigateTo({
 					url: '/pages/template/tabbar/detail/detail?title=' + e.title

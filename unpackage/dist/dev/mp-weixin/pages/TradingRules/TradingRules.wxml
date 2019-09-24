@@ -1,1 +1,0 @@
-<view class="page" bind:__l="__l"><block wx:for="{{rules}}" wx:for-item="rs" wx:for-index="__i0__" wx:key="id"><view data-event-opts="{{[['tap',[['goRulesContent',['$0'],[[['rules','id',rs.id,'id']]]]]]]}}" class="rules_item" bindtap="__e">{{rs.title}}</view></block></view>

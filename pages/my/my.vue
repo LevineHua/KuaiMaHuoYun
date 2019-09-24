@@ -2,10 +2,15 @@
 	<view class="page">
 		<view class="my_top">
 			<view class="my_info">
-				<view class="my_picture">
-					<image class="picture" :src="avatarUrl"></image>
-				</view>
-				<view class="my_name">{{nickname}}</view>
+				<template v-if="uid!='' && uid!=null">
+					<view class="my_picture">
+						<image class="picture" :src="avatarUrl"></image>
+					</view>
+					<view class="my_name">{{nickname}}</view>
+				</template>
+				<template v-if="uid=='' || uid==null">
+					<view class="goLogin" @click="goLogin">去登陆</view>
+				</template>
 				<view class="census">
 					<view class="census_item" @click="goTab(1)">
 						<text class="item_status">待确认</text>
@@ -69,7 +74,12 @@
 				nickname:'',
 				userinfo:'',
 				user_id:0,
-				user:[]
+				user:{
+					examine:0,
+					transit:0,
+					complete:0
+				},
+				uid:''
 			}
 		},
 		components:{
@@ -77,16 +87,20 @@
 		},
 		onLoad() {
 			var _this = this;
+		},
+		onShow() {
+			var _this = this;
+			this.uid = uni.getStorageSync('uid');
+			
+			if(this.uid==null || this.uid==''){
+				return;
+			}
 			var wechar_userinfo = uni.getStorageSync("wx_userInfo");
 			this.avatarUrl = wechar_userinfo.avatarUrl;
 			this.nickname = wechar_userinfo.nickName;
 			
 			this.userinfo = uni.getStorageSync('userinfo');
 			this.user_id  = this.userinfo.user_id;
-			
-		},
-		onShow() {
-			var _this = this;
 			
 			uni.request({
 				url: this.serverURL + 'home/user/user_get_order',
@@ -111,6 +125,11 @@
 			}
 		},
 		methods: {
+			goLogin(){
+				uni.navigateTo({
+					url:'../login/login'
+				})
+			},
 			clickMenu(type) {
 				var _this = this;
 				if(type=="lxpt"){
@@ -124,10 +143,22 @@
 						url:"../TradingRules/TradingRules"
 					})
 				} else if(type=='wdpj'){
+					if(_this.uid=='' || _this.uid==null){
+						uni.navigateTo({
+							url:'../login/login'
+						})
+						return;
+					}
 					uni.navigateTo({
 						url:"../myAssess/myAssess"
 					})
 				} else if(type=='wdyhq'){
+					if(_this.uid=='' || _this.uid==null){
+						uni.navigateTo({
+							url:'../login/login'
+						})
+						return;
+					}
 					uni.navigateTo({
 						url:"../myCoupon/myCoupon"
 					})

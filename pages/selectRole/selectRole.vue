@@ -57,6 +57,7 @@
 								user_id:res.data.user_id,
 								user_identity:res.data.user_identity
 							}
+							uni.setStorageSync("uid", res.data.user_id);
 							uni.setStorageSync("userinfo",userinfo)
 							uni.showToast({
 								title:'绑定成功',

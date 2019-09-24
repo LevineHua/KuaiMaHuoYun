@@ -20,3 +20,22 @@
 .list{
 	height: 100%;
 }
+.no_login{
+	width: 100%;
+	height: calc(100% - 76upx);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.goLogin{
+	color: white;
+	background: #139CFF;
+	width: 312upx;
+	height: 63upx;
+	font-size: 24upx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 30px;
+	margin: 0 auto;
+}

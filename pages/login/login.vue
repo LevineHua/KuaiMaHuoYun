@@ -112,6 +112,7 @@
 															})
 														} else {
 															uni.setStorageSync("userinfo",userinfo);
+															uni.setStorageSync("uid", res.data.user_id);
 															if(res.data.examine==2 || (res.data.examine==0 && res.data.user_type==1) || res.data.examine==4){
 																uni.redirectTo({
 																	url:'../uploadCard/uploadCard'

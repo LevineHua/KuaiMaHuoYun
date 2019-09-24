@@ -122,8 +122,32 @@
 				this.start_time = (e.value[0]>=10?(e.value[0]):('0'+e.value[0])) + ':' + (e.value[1]>=10?(e.value[1]):('0'+e.value[1]))
 			},
 			selectedTime() {
-				uni.setStorageSync("componentTimeInfo", this.start_time);
-				uni.navigateBack();
+				/* uni.setStorageSync("componentTimeInfo", this.start_time);
+				uni.navigateBack(); */
+				/* uni.showToast({
+					title:'请选择'
+				}) */
+				var time = uni.getStorageSync("componentTime")+" "+this.start_time;
+				console.log(time);
+				var _this = this;
+				uni.request({
+					url:_this.serverURL+'home/index/erp_hour',
+					method:"POST",
+					data:{
+						set_time:time
+					},
+					success(res) {
+						if(res.data.time==false){
+							uni.showToast({
+								title:'具体装货时间有误',
+								icon:'none'
+							})
+						} else {
+							uni.setStorageSync("componentTimeInfo", _this.start_time);
+							uni.navigateBack();
+						}
+					}
+				})
 			}
 		}
 	};

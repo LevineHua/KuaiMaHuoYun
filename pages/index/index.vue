@@ -38,6 +38,7 @@
 				<textarea class="orderRemarks" placeholder-class="remarks_pla" v-model="orderRemarks" placeholder="请填写订单备注"></textarea>
 				<view class="select_btn" @click="releaseOrder()">发布</view>
 			</template>
+			<view class="select_btn" v-if="uid=='' || uid==null" @click="goLogin">登录</view>
 		</view>
 		
 		<uni-popup :show="type === 'middle-img'" position="middle" mode="insert" @hidePopup="togglePopup('')">
@@ -77,7 +78,7 @@
 				userinfo:'',
 				type: '',
 				isNewUser:0,
-				userType:1,		//0表示货主，1表示车主
+				userType:'',		//0表示货主，1表示车主
 				examine:1, 	//0:没有提交认证1  审核通过；2 身份审核未提交；3 驾驶证审核未提交；4 身份证审核拒绝；5 驾驶证审核拒绝；6 身份证审核中；7 驾驶证审核中
 				car_num:'',
 				goodsName:'',
@@ -106,7 +107,8 @@
 				goodsWeightIsError:0,
 				goodsMoneyIsError:0,
 				goodsUsernameIsError:0,
-				username:''
+				username:'',
+				uid:''
 			}
 		},
 		components:{
@@ -117,6 +119,7 @@
 		},
 		onLoad(e) {
 			uni.setStorageSync("recommendId",e.uid);
+			this.uid = uni.getStorageSync("uid");
 			var _this = this;
 			var url = _this.serverURL;
 			this.url = url;
@@ -160,64 +163,65 @@
 			var _this = this;
 			var url = this.serverURL;
 			
-			uni.request({
-				url: url + 'home/user/get_user_information',
-				method:'POST',
-				data:{
-					wxchat_oppid:uni.getStorageSync("openId")
-				},
-				success(res) {
-					if(res.data.code==300){
-						uni.redirectTo({
-							url:'/pages/login/login?canGetUserInfo=0'
-						})
-					} else if(res.data.code==100){
-						var userinfo = {
-							user_id:res.data.user_id,
-							user_identity:res.data.user_type
-						}
-						uni.setStorageSync("car_type",res.data.car_type);
-						
-						uni.setStorageSync("examine",res.data.examine);
-						
-						uni.setStorageSync("userinfo",userinfo);
-						
-						uni.setStorageSync("userType",userinfo);
-						
-						uni.setStorageSync("loginCount",res.data.login_count);
-						
-						_this.car_type = uni.getStorageSync('car_type');
-						_this.examine = uni.getStorageSync('examine');
-						_this.userinfo = uni.getStorageSync('userinfo');
-						_this.loginCount = uni.getStorageSync('loginCount');
-					}
-				},
-				fail(error) {
-					console.log(error)
-				}
-			})
-			
-			
-			
-			
-			if(this.loginCount==1){
+			this.uid = uni.getStorageSync("uid");
+			if(this.uid!=null && this.uid!=''){
 				uni.request({
-					url: url + 'home/index/get_user_card_money',
-					method: 'POST',
+					url: url + 'home/user/get_user_information',
+					method:'POST',
+					data:{
+						wxchat_oppid:uni.getStorageSync("openId")
+					},
 					success(res) {
-						console.log(res);
-						if(res.data.code==100){
-							_this.yhqMoney = res.data.money;
-							_this.togglePopup('middle-img');
-							uni.hideTabBar();
+						if(res.data.code==300){
+							uni.redirectTo({
+								url:'/pages/login/login?canGetUserInfo=0'
+							})
+						} else if(res.data.code==100){
+							var userinfo = {
+								user_id:res.data.user_id,
+								user_identity:res.data.user_type
+							}
+							uni.setStorageSync("car_type",res.data.car_type);
+							
+							uni.setStorageSync("examine",res.data.examine);
+							
+							uni.setStorageSync("userinfo",userinfo);
+							
+							uni.setStorageSync("userType",userinfo);
+							
+							uni.setStorageSync("loginCount",res.data.login_count);
+							
+							_this.car_type = res.data.car_type;
+							_this.examine = res.data.examine;
+							_this.userinfo = uni.getStorageSync('userinfo');
+							_this.loginCount = res.data.login_count;;
+							_this.userType = res.data.user_type;
+							
+							if(_this.loginCount==1){
+								uni.request({
+									url: url + 'home/index/get_user_card_money',
+									method: 'POST',
+									success(res) {
+										console.log(res);
+										if(res.data.code==100){
+											_this.yhqMoney = res.data.money;
+											_this.togglePopup('middle-img');
+											uni.hideTabBar();
+										}
+									},
+									fail(error) {
+										console.log(res);
+									}
+								})
+							}
 						}
 					},
 					fail(error) {
-						console.log(res);
+						console.log(error)
 					}
 				})
 			}
-
+			
 			_this.setoutCity = uni.getStorageSync("setoutCity");
 			_this.endCity = uni.getStorageSync("endCity");
 			_this.start_time = uni.getStorageSync("componentTime") + ' ' + uni.getStorageSync("componentTimeInfo");
@@ -241,6 +245,11 @@
 			}
 		},
 		methods: {
+			goLogin(){
+				uni.navigateTo({
+					url:'../login/login'
+				})
+			},
 			searchOrder(){
 				var _this = this;
 				if(this.examine==1){
@@ -276,16 +285,22 @@
 					
 				} else {
 					var examine = '';
+					var url = '';
 					if(this.examine==0){
-						examine = "没有提交认证"
+						examine = "没有提交认证";
+						url = '/pages/uploadCard/uploadCard';
 					} else if(this.examine==2){
-						examine = "身份审核未提交"
+						examine = "身份审核未提交";
+						url = '/pages/uploadCard/uploadCard';
 					} else if(this.examine==3){
 						examine = "驾驶证审核未提交"
+						url = '/pages/uploadDrivingLicense/uploadDrivingLicense';
 					} else if(this.examine==4){
-						examine = "身份审核拒绝"
+						examine = "身份审核拒绝";
+						url = '/pages/uploadCard/uploadCard';
 					} else if(this.examine==5){
-						examine = "驾驶证审核拒绝"
+						examine = "驾驶证审核拒绝";
+						url = '/pages/uploadDrivingLicense/uploadDrivingLicense';
 					} else if(this.examine==6){
 						examine = "身份审核中"
 					} else if(this.examine==7){
@@ -294,7 +309,14 @@
 					uni.showToast({
 						title:examine,
 						icon:'none',
-						mask:true
+						mask:true,
+						success() {
+							setTimeout(function(){
+								uni.navigateTo({
+									url:url
+								})
+							},1500);
+						}
 					})
 				}
 			},
@@ -413,7 +435,7 @@
 										_this.end_delivery_lon = data.result.location.lng+','+data.result.location.lat;
 										
 										var sendDate = {
-											user_id: _this.userinfo.user_id,	//用户id
+											user_id: _this.uid,	//用户id
 											start_delivery: _this.setoutCity+','+_this.setoutAddress,	//出发地
 											end_delivery: _this.endCity+','+_this.endCityAddress,	//收货地
 											start_delivery_lon: _this.start_delivery_lon,		//出发地经纬度

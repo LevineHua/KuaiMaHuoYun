@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "订单列表",
-  "usingComponents": {
-    "km-order": "/components/km-order2"
-  }
-}
