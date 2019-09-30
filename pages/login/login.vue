@@ -50,9 +50,9 @@
 			}
 		},
 		onLoad(e) {
-			if(e.canGetUserInfo==1){
+			/* if(e.canGetUserInfo==1){
 				this.canGetUserInfo = e.canGetUserInfo;
-			}
+			} */
 		},
 		methods: {
 			getUserInfo(e) {
@@ -63,7 +63,7 @@
 				uni.setStorageSync("wx_userInfo", userInfo);
 				//console.log(userInfo);
 				if(userInfo!=undefined){
-					this.canGetUserInfo = 1;
+					/* this.canGetUserInfo = 1; */
 					// 实现微信登录
 					uni.login({
 						provider: "weixin",
@@ -129,7 +129,10 @@
 														}
 													}
 												});
-												
+											} else {
+												uni.redirectTo({
+													url:'../selectRole/selectRole'
+												})
 											}
 										},
 										fail(error) {

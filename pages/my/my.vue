@@ -9,7 +9,7 @@
 					<view class="my_name">{{nickname}}</view>
 				</template>
 				<template v-if="uid=='' || uid==null">
-					<view class="goLogin" @click="goLogin">去登陆</view>
+					<view class="goLogin" @click="goLogin">去登录</view>
 				</template>
 				<view class="census">
 					<view class="census_item" @click="goTab(1)">
@@ -66,7 +66,7 @@
 					{"id":"wdyhq","icon":"../../static/wdyhq.png","title":"我的优惠券","event":"wdyhq"},
 					{"id":"wdpj","icon":"../../static/wdpj.png","title":"我的评价","event":"wdpj"},
 					{"id":"fxlq","icon":"../../static/fxlq.png","title":"分享领券","event":"fxlq"},
-					{"id":"jygz","icon":"../../static/jygz.png","title":"交易规则","event":"jygz"},
+					{"id":"jygz","icon":"../../static/jygz.png","title":"用户指南","event":"jygz"},
 					{"id":"mzsm","icon":"../../static/mzsm.png","title":"免责声明","event":"mzsm"},
 					{"id":"lxpt","icon":"../../static/lxpt.png","title":"联系平台","event":"lxpt"}
 				],

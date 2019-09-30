@@ -282,7 +282,7 @@
 						id: _this.orderId
 					},
 					success(res) {
-						console.log(res);
+						//console.log(res);
 						if(res.data.code==100){
 							var order = res.data.msg;
 							_this.order = order;
@@ -294,7 +294,20 @@
 								_this.uploadPhoenStep = 3;
 							}
 							
-							_this.status = order.status;
+							_this.status = order.states;
+							
+							if(_this.status==7){
+								uni.showModal({
+									title:'提示',
+									content:'订单已确认，是否立即支付？',
+									success(res) {
+										if(res.confirm){
+											_this.togglePopup("carShipper");
+										}
+									}
+								})
+							}
+							
 							if(order.coupon_money!=null){
 								_this.cutMoney = order.coupon_money;
 							}

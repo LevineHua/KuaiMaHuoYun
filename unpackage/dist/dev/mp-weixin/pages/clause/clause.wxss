@@ -1,0 +1,16 @@
+
+.page{
+	height: auto;
+	padding: 20rpx;
+}
+.clause_title{
+	font-size: 30rpx;
+	font-weight: bold;
+	color: #000;
+}
+.clause_main{
+	font-size: 24rpx;
+	color: #666;
+	text-indent: 2em;
+}
+

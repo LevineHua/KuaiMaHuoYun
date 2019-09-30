@@ -2,7 +2,7 @@
 	<view class="page order_taker_success">
 		<image src="../../static/success.png" class="success_icon"></image>
 		<template v-if="userType==0">
-			<view class="success_tip">订单发布成功请在订单中查看</view>
+			<view class="success_tip">订单发布成功请关注公众号“如期货运”接收最新消息</view>
 		</template>
 		<template v-if="userType==1">
 			<view class="success_tip">接单成功请在订单中查看</view>

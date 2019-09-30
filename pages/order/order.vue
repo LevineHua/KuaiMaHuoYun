@@ -2,7 +2,7 @@
 	<view class="page">
 		<template v-if="uid=='' || uid==null">
 			<view class="no_login">
-				<view class="goLogin" @click="goLogin">去登陆</view>
+				<view class="goLogin" @click="goLogin">去登录</view>
 			</view>
 		</template>
 		<template v-if="uid!='' && uid!=null">

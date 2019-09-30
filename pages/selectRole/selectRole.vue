@@ -8,7 +8,8 @@
 			<view class="role goodser"></view>
 			<view class="active_item">我是货主</view>
 		</view>
-		<view class="next_btn" :class="{sure_isAgree: isAgree==='agree'}" @click="nextStep">下一步</view>
+		<!-- <view class="next_btn" :class="{sure_isAgree: isAgree==='agree'}" @click="nextStep">下一步</view> -->
+		<button class="next_btn agree" open-type="getPhoneNumber"  @getphonenumber="getPhoneNumber">下一步</button>
 	</view>
 </template>
 
@@ -23,12 +24,45 @@
 			}
 		},
 		onLoad(e) {
-			this.mobile = e.mobile;
+			/* this.mobile = e.mobile;
 			this.password = e.password;
 			this.code = e.code;
-			console.log(e);
+			console.log(e); */
 		},
 		methods: {
+			getPhoneNumber(e) {
+				var _this = this;
+				if(e.detail.errMsg=='getPhoneNumber:ok'){
+					uni.login({
+						provider:'weixin',
+						success(res) {
+							console.log(res);
+							uni.request({
+								url:_this.serverURL + "home/user/update_user_dateil",
+								method:"POST",
+								data:{
+									encryptedData:e.detail.encryptedData,
+									iv:e.detail.iv,
+									code:res.code
+								},
+								success(res) {
+									console.log(res);
+									if(res.data.code==100){
+										_this.mobile = res.data.mobile;
+										_this.nextStep();
+									} else {
+										uni.showModal({
+											title:'',
+											content:res.data.msg
+										})
+									}
+								}
+							})
+						}
+					})
+				}
+				
+			},
 			selectRole(role) {
 				this.role = role;
 			},
@@ -42,8 +76,6 @@
 					method:'POST',
 					data:{
 						mobile:_this.mobile,
-						password:_this.password,
-						code:_this.code,
 						user_identity:_this.role==="dirver"?1:0,
 						wxchat_oppid:openid,
 						headimageurl:wx_userInfo.avatarUrl,

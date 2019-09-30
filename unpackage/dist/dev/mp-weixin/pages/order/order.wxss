@@ -1,0 +1,60 @@
+.uni-swiper-tab{
+	height: 74rpx;
+	line-height: 0;
+	border-bottom: solid 1px #EEEEEE;
+}
+.swiper-tab-list{
+	width: 25%;
+	font-size: 24.17rpx;
+	color: #818181;
+	height: 72rpx;
+	line-height: 72rpx;
+}
+.swiper-tab-list.active{
+	color: #139CFF;
+	border-bottom: solid 2px #139CFF;
+}
+.swiper-box{
+	height: calc(100% - 76rpx);
+}
+.list{
+	height: 100%;
+}
+.no_login{
+	width: 100%;
+	height: calc(100% - 76rpx);
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+.goLogin{
+	color: white;
+	background: #139CFF;
+	width: 312rpx;
+	height: 63rpx;
+	font-size: 24rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	border-radius: 30px;
+	margin: 0 auto;
+}
+
